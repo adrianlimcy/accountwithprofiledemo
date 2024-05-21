@@ -33,6 +33,12 @@ defmodule Accountwithprofiledemo.Accounts do
     |> Repo.update()
   end
 
+  def update_password(%User{} = account, attrs) do
+    account
+    |> User.password_changeset(attrs)
+    |> Repo.update()
+  end
+
   def change_account(%User{} = account, attrs \\ %{}) do
     User.changeset(account, attrs)
   end

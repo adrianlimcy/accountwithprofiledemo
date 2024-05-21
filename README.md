@@ -33,3 +33,7 @@ Steps:
 18. Create form_component.ex in account_live
 19. Modify account_live/index.html.heex with buttons to edit profile for each user
   - be super careful when to use "account" and when to use "user" (wasted 2 hours on this)
+20. Create another form_component_pwd.ex in account_live
+21. Modify account_live/index.html.heex  with buttons to edit password for each user
+  - basically the same steps for profile, but a new form_component_pwd to handle the new modal
+22. End of Project

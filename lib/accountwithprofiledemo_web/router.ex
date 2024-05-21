@@ -71,6 +71,7 @@ defmodule AccountwithprofiledemoWeb.Router do
 
       live "/accounts",  AccountLive.Index, :index
       live "/accounts/:id/edit", AccountLive.Index, :edit
+      live "/accounts/:id/edit_pwd", AccountLive.Index, :edit_pwd
     end
   end
 

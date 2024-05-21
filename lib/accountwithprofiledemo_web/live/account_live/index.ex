@@ -25,4 +25,10 @@ defmodule AccountwithprofiledemoWeb.AccountLive.Index do
     |> assign(:account, Accounts.get_user!(id))
   end
 
+  defp apply_action(socket, :edit_pwd, %{"id" => id}) do
+    socket
+    |> assign(:page_title, "Edit Password")
+    |> assign(:account, Accounts.get_user!(id))
+  end
+
 end
