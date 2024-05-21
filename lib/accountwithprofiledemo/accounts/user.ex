@@ -104,6 +104,20 @@ defmodule Accountwithprofiledemo.Accounts.User do
     end
   end
 
+  def profile_changeset(user, attrs) do
+    user
+    |> cast(attrs, [:profile])
+  end
+
+  def changeset(user, attrs) do
+    user
+    |> cast(attrs, [:profile])
+    |> validate_required([])
+  end
+
+  # maybe add validation for the 3 types of profiles here.
+  # Admin, Member and Customer
+
   @doc """
   A user changeset for changing the password.
 
@@ -157,4 +171,5 @@ defmodule Accountwithprofiledemo.Accounts.User do
       add_error(changeset, :current_password, "is not valid")
     end
   end
+
 end

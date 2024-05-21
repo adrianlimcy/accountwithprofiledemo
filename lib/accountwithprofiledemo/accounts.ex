@@ -27,6 +27,15 @@ defmodule Accountwithprofiledemo.Accounts do
     Repo.all(User)
   end
 
+  def update_profile(%User{} = account, attrs) do
+    account
+    |> User.profile_changeset(attrs)
+    |> Repo.update()
+  end
+
+  def change_account(%User{} = account, attrs \\ %{}) do
+    User.changeset(account, attrs)
+  end
 
   def get_user_by_email(email) when is_binary(email) do
     Repo.get_by(User, email: email)

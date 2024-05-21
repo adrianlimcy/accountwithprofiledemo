@@ -30,4 +30,6 @@ Steps:
 15. add def list_accounts() in accounts.ex
 16. add AccountLive.Index to router
 17. Optional: Rework home.html.heex under accountwithprofiledemo_web/controllers/page_html to make the home page more to your style and add link to accounts index page 
-18. 
+18. Create form_component.ex in account_live
+19. Modify account_live/index.html.heex with buttons to edit profile for each user
+  - be super careful when to use "account" and when to use "user" (wasted 2 hours on this)

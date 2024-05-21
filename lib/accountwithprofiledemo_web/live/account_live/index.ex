@@ -18,4 +18,11 @@ defmodule AccountwithprofiledemoWeb.AccountLive.Index do
     |> assign(:page_title, "Listing Users")
     |> assign(:comment, nil)
   end
+
+  defp apply_action(socket, :edit, %{"id" => id}) do
+    socket
+    |> assign(:page_title, "Edit Profile")
+    |> assign(:account, Accounts.get_user!(id))
+  end
+
 end
