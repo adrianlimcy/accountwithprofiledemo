@@ -1,0 +1,13 @@
+<.header>
+  Listing Users
+</.header>
+
+<.table
+  id="accountss"
+  rows={@streams.accounts}
+  row_click={fn {_id, account} -> JS.navigate(~p"/comments/#{account}") end}
+>
+  <:col :let={{_id, account}} label="Name"><%= account.name %></:col>
+  <:col :let={{_id, account}} label="Email"><%= account.email %></:col>
+  <:col :let={{_id, account}} label="Profile"><%= account.profile %></:col>
+</.table>

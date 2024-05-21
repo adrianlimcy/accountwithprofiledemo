@@ -68,6 +68,8 @@ defmodule AccountwithprofiledemoWeb.Router do
       on_mount: [{AccountwithprofiledemoWeb.UserAuth, :ensure_authenticated}] do
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
+
+      live "/accounts",  AccountLive.Index, :index
     end
   end
 

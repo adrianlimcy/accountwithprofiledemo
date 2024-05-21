@@ -25,3 +25,9 @@ Steps:
   - maybe hide the profile field for now
 11. mix ecto.migrate
 12. test by creating a user with name, email, password (profile should default to Member)
+13. create a folder called account_live under accountwithprofiledemo_web/live
+14. create an index.ex and index.html.heex under account_live folder
+15. add def list_accounts() in accounts.ex
+16. add AccountLive.Index to router
+17. Optional: Rework home.html.heex under accountwithprofiledemo_web/controllers/page_html to make the home page more to your style and add link to accounts index page 
+18. 
