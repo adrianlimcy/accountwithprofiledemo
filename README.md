@@ -18,4 +18,10 @@ Steps:
   - make sure there is a postgres superuser account in the postgres installation
   - homebrew might now have it as default
 8. mix ecto.gen.migration add_name_and_profile
-9. 
+  - add in the migration changes
+9. go to user.ex in accounts/user.ex and add in the name and profile fields
+  - remember to also modify the changeset
+10. go to user_registration_live.ex to update fields when registering
+  - maybe hide the profile field for now
+11. mix ecto.migrate
+12. test by creating a user with name, email, password (profile should default to Member)
