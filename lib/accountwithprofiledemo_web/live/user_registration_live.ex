@@ -33,8 +33,11 @@ defmodule AccountwithprofiledemoWeb.UserRegistrationLive do
         <.input field={@form[:name]} type="text" label="Name" required />
         <.input field={@form[:email]} type="email" label="Email" required />
         <.input field={@form[:password]} type="password" label="Password" required />
-        <.input field={@form[:profile]} type="hidden" value="Member"/>
-
+        <%= if Accounts.list_accounts == [] do %>
+          <.input field={@form[:profile]} type="hidden" value="admin"/>
+        <% else %>
+            <.input field={@form[:profile]} type="hidden" value="member"/>
+        <% end %>
         <:actions>
           <.button phx-disable-with="Creating account..." class="w-full">Create an account</.button>
         </:actions>

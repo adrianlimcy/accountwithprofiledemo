@@ -69,6 +69,18 @@ defmodule AccountwithprofiledemoWeb.Router do
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
 
+      # live "/accounts",  AccountLive.Index, :index
+      # live "/accounts/:id/edit", AccountLive.Index, :edit
+      # live "/accounts/:id/edit_pwd", AccountLive.Index, :edit_pwd
+    end
+  end
+
+  scope "/", AccountwithprofiledemoWeb do
+    pipe_through [:browser, :require_admin]
+
+    live_session :require_admin,
+      on_mount: [{AccountwithprofiledemoWeb.UserAuth, :ensure_authenticated}] do
+
       live "/accounts",  AccountLive.Index, :index
       live "/accounts/:id/edit", AccountLive.Index, :edit
       live "/accounts/:id/edit_pwd", AccountLive.Index, :edit_pwd

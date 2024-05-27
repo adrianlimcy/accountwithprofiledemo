@@ -19,8 +19,15 @@ defmodule AccountwithprofiledemoWeb.AccountLive.FormComponent do
         phx-change="validate"
         phx-submit="save"
       >
-        <.input field={@form[:profile]} type="text" label="Profile" />
-
+        <.input field={@form[:profile]} type="select" label="Profile"
+          options=
+              {
+                [ {"Member", "member"},
+                  {"Customer", "customer"},
+                  {"Administrator", "admin"}
+                ]
+              }
+        />
         <:actions>
           <.button phx-disable-with="Saving...">Save User</.button>
         </:actions>

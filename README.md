@@ -37,3 +37,9 @@ Steps:
 21. Modify account_live/index.html.heex  with buttons to edit password for each user
   - basically the same steps for profile, but a new form_component_pwd to handle the new modal
 22. End of Project
+
+Optional:
+21. added def require_admin in user_auth.ex
+22. added new scope in router.ex to ensure user is admin to enter admin page
+23. added if first user, make first registration an admin
+24. added a link to accounts in root.html.heex
